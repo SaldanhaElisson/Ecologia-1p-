@@ -1,0 +1,186 @@
+:root{
+   --title-color: #322153;/*  váriavel para css, colocar antes do html, quando eu mudar a propriedade desse váriavel todas as variáveis usadas vão mudar também */
+   --primary-color: #34cb79; 
+
+} 
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+html {
+    font-family: 'Roboto', sans-serif;
+}
+/* BOX MODEL
+
+Modelo de caixa
+Toda caixa tem
+largura, espaçamento, altura, preenchimento, bordas, cor, fundo, maneira que é vista, posicionamento, alinhamentos
+*/
+
+h1, h2, h3, h4, h5, h6 {
+
+    color: var(--title-color);
+    font-family: 'Ubuntu', sans-serif;
+}
+
+
+body {
+
+        background-color: #f0f0f5;
+        -webkit-font-smothing: antialiased;
+}
+
+a {
+    text-decoration: none;
+}
+
+#page-home{
+    height: 100vh;
+
+    background: url('../styles/assets/home-background.svg') no-repeat;
+    background-position: 35vw bottom;
+    /* vai deixar 100  a altura da caixa e da imagem e depois vai jogar a imagem para baixo */
+
+}
+
+#page-home .content {
+    width: 90%;  /* dependendo do tamanho da pagina ele somente irá pegar 90% do tamanho total que está aparecendo  */
+    max-width: 1100px; /* passou dos 1100 px, a caixa não cresce mais */ 
+    height: 100%;
+
+    margin: 0 auto; /*  margens da caixa top right left buton  */ 
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+#page-home header {
+
+    margin-top: 48px;
+
+    display: flex; /*  Deixar as boxes uma do lado da outra */ 
+    align-items: center; /*  alinhar os intens desse elemento */
+    justify-content: space-between; /* justificar os elementos para a direista */
+}
+
+#page-home header a{
+    display: flex;
+
+    color: var(--title-color);
+    font-weight: 700;
+
+    
+}
+
+#page-home header a span {
+    margin-right: 16px;
+    display: flex;
+    
+    background-image: url(../styles/assets/log-in.svg);
+
+  
+    width: 20px;
+    height: 20px;
+}
+ 
+#page-home main {
+    max-width: 560px;
+
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#page-home main h1{
+    font-size: 54px;
+
+}
+
+#page-home main p {
+    font-size: 24px;
+    line-height: 38px;
+    margin-top: 24px;
+
+}
+
+#page-home main a{
+    width: 100%;
+    max-width: 360px;
+    height:72px ;
+
+    border-radius: 8px ; /* arrendodameneto de bordas*/
+
+
+    background-color: var(--primary-color);
+
+    display: flex;
+    align-items: center;
+
+    transition: 400ms;
+
+
+}
+
+#page-home main a:hover {
+    background-color: #2fb86e;
+
+    /* hover quando passar o mouse por cima ele fará a aplicação do objeto */
+}
+
+#page-home main a span{
+    width: 72px;
+    height: 72px;
+
+    border-top-left-radius: 8px ;
+    border-bottom-left-radius: 8px; 
+
+    background-color: rgba(0, 0, 0, 0.08);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*  pseudo elementos, elementos que criamos no css, mas não tem no html */
+
+#page-home main a span::after {
+    content: "";
+    background-image: url('../styles/assets/search.svg');
+
+    width: 20px;
+    height: 20px;
+}
+#page-home main a strong {
+    flex:1;
+    color: white;
+
+    text-align: center;
+}
+
+@media (max-width: 900px) {
+    #page-home {
+        background-position-x: 70vw;
+    }
+    #page-home .content{
+        align-items: center;
+        text-align: center;
+    }
+
+    #page-home header a {
+        position: absolute;
+        bottom: 48px;
+
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    #page-home main {
+        align-items: center;
+
+    }
+} 
