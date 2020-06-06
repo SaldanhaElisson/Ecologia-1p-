@@ -33,9 +33,96 @@
             </a>
     </header>
 
+    <form action="">
+
+        
+        <h1>Cadastro do ponto de coleta </h1>
+
+        <fieldset>
+            <legend>
+                <h2>Dados da entidade </h2>
+            </legend>
+
+            <div class="field">
+
+                <label for="name">Nome da entidade  </label>
+                <input type="text" name='name'>
+
+            </div>
+
+            <div class="field-group">
+
+                <div class="field">  
+                    <label for=" address">Endereço</label>
+                    <input type="text" name="address">
+                </div>
+                
+
+                <div class="field">
+                    <label for=" address"> Número/Complemento</label>
+                    <input type="text" name="address2"> 
+
+
+
+                </div>
+                  
+            </div>
+
+
+
+           
+            <div class="field-group">
+                <div class="field">
+
+                    <label for="State">Estado </label>
+
+                    <select name="uf">
+
+                        <option value="">Selecione o Estado </option>
+
+                         
+                    </select>
+
+                    <input type="hidden" name='state'> 
+                
+                    
+                </div>
+
+
+                <div class="field">
+
+                    <label for="city"> Cidade </label>
+
+                    <select name="city">
+
+                        <option value="" disabled > Selecione a Cidade </option>
+                        <!-- ' dusabled' desativa a seleção até eu selecionar antes o primeiro e depois vai habilitar a seleção -->
+ 
+                    </select>
+                </div>
+
+            </div>
+
+        </fieldset>
+  
+        <fieldset>
+
+            <legend>
+                <h2> Ìtens de Coleta    </h2>
+            </legend>
+
+
+
+        </fieldset>
+
+        <button> Cadastrar ponto de coleta</button>
+
+    </form>
+
      
 
    
 </div>
+<script src="./Script/creat-point.js"></script>
 </body>
 </html>

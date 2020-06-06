@@ -1,4 +1,7 @@
 @media (max-width: 900px) {
+    
+    /* quando a tela for de  900 px ele vai fzr o que o comando está dizendo abaixo */
+    
     #page-home {
         background-position-x: 70vw;
     }

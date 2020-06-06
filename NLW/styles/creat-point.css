@@ -32,3 +32,102 @@
     width: 20px;
     height: 20px;
 }
+
+form{
+    
+    background-color: white;
+
+    /* alinhamento ( pelo lado de fora da caixa*/
+    margin: 80px auto ; 
+    padding: 64px; /* preenchimento */
+
+    border-radius: 8px;
+
+    max-width: 730px ;
+
+    
+}
+
+form h1{
+    font-size: 36px;
+}
+
+form fieldset {
+    margin-top: 64px;
+
+    border:0;
+
+}
+
+form legend {
+    margin-bottom: 40px;
+
+}
+
+form legend h2 {
+    font-size: 24px;
+}
+
+form .field{
+
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 24px;
+}
+
+form .field-group {
+    display: flex;
+}
+
+form input,
+form select {
+    background-color: #f0f0f5;
+
+    border: 0;
+    padding: 16px 24px;
+    font-size: 16px;
+
+    outline: none; /*  A linha preta das bordas da caixa do input, qundo clickada não aparecem, mais*/  
+
+    border-radius: 8px;
+}
+
+form select{
+    -webkit-appearance: none ;
+    -moz-appearance: none;
+    appearance: none;
+
+    /* esses comandos vai tirar a característica do select */ 
+
+}
+
+form .field-group .field + .field {
+    margin-left: 24px;
+} 
+
+form button {
+    width: 260px;
+    height: 56px;
+
+    background-color:  var(--primary-color);
+    border-radius: 8px;
+
+    color: white;
+    font-size: 16px;
+    font-weight:  bolder;
+
+    border: 0ch;
+
+    margin-top: 24px;
+
+    transition: background-color 400ms ;
+
+}
+
+form button:hover{
+
+    background-color: #2fb86e;
+}

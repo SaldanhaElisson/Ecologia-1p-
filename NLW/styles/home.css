@@ -8,9 +8,9 @@
 }
 
 #page-home .content {
-    width: 90%;  /* dependendo do tamanho da pagina ele somente irá pegar 90% do tamanho total que está aparecendo  */
-    max-width: 1100px; /* passou dos 1100 px, a caixa não cresce mais */ 
-    height: 100%;
+    width: 90%;  /* dependendo do tamanho da pagina ele somente irá pegar 90% do tamanho total que está aparecendo  largura */
+    max-width: 1100px; /* passou dos 1100 px, a caixa não cresce mais largura */ 
+    height: 100%; /* alturar */
 
     margin: 0 auto; /*  vai dexar as margens em cima e de baixo 0 e preenchear as laterias com as que sobram */ 
 
@@ -25,7 +25,7 @@
 
     display: flex; /*  Deixar as boxes uma do lado da outra */ 
     align-items: center; /*  alinhar os intens desse elemento */
-    justify-content: space-between; /* justificar os elementos para a direista */
+    justify-content: space-between; /* justificar os elementos para a direita */
 }
 
 #page-home header a{
@@ -78,11 +78,12 @@
 
 
     background-color: var(--primary-color);
-
+     
+    /* alinhamento (dentro da caixa)*/
     display: flex;
     align-items: center;
 
-    transition: 400ms;
+    transition: 400ms; 
 
 
 }
@@ -115,6 +116,8 @@
 
     width: 20px;
     height: 20px;
+
+    /* Esse elemento estará dentro da boxe, é a imagem da lupa pequena que está centralizada */ 
 }
 #page-home main a strong {
     flex:1;
