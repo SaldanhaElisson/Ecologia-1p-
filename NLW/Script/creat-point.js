@@ -28,7 +28,7 @@ function getCities(event){
 
     // event vai pegar o objeto e fazer alguma coisa nesse caso é target é pega onde o evento está acontecendo e pegar o valor 
 
-    var url = `https://servicodados.ibge.gov.br/api/v1/localidades/estados/33/municipios`
+    var url = `https://servicodados.ibge.gov.br/api/v1/localidades/estados/${ufValue}/municipios`
 
     fetch (url).then( res => res.json()).then(cities => {
         for (const city of cities){
@@ -44,12 +44,58 @@ function getCities(event){
 
 document.querySelector('select[name=uf]')
 document .addEventListener("change", getCities)
-
-
-
-//document.querySelector('select[name=uf]')
-//document .addEventListener("change", () => {
- //console.log('mudei')
- //}) 
   
  // esse comando se chama ouvidor de eventos. o 'change' se refere ao evento que no caso é a mundaça, quando ele ver que houve uma mundança ele vai fazer a função depois da virgula que no caso é escrever 'mudei' no sonsole //
+
+ //items de coleta
+ //pegar todos os li's
+
+ const itemsToCollect = document.querySelectorAll('.items-grid li')
+
+ for (const item of itemsToCollect){
+    item.addEventListener('click', handleSelectedItem)
+ }
+
+ const CollectedItems=document.querySelector('input[name = items]') 
+
+ // variável do impunt(escondido) Itens
+let selectedItems=[]
+
+function handleSelectedItem(event) {
+    const ItemLi = event.target
+
+   // adicionar ou remover uma class no java script 
+    ItemLi.classList.toggle('selected')
+
+    const ItemId =ItemLi.dataset.id
+
+    // verificar se exitem itens selecionados, se sim
+    //pegar os itens selecionados
+    
+    const alreadyItems = selectedItems.findIndex( item => {
+        const itemFound= item == ItemId // isso será true or false se for verdadeiro ele retorna se for false ele não retorna
+        return itemFound
+
+    })
+
+
+    // se já estiver slecionado, tirar a seleção 
+    if( alreadyItems >= 0 ){
+        const filterItems = selectedItems.filter( item =>{
+            const itemDifferent = item != ItemId
+            return itemDifferent
+        })
+
+        selectedItems = filterItems
+    } else{
+         // se não estiver selecionado, adicionar á seleção
+        selectedItems.push(ItemId)
+    }
+    console.log(selectedItems)
+
+    // se não estiver selecionado, adicionar á seleção
+
+    //autalizar o campo escondido com os itens selecionados
+    CollectedItems.value = selectedItems
+    
+ }

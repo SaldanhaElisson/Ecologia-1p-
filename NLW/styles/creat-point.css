@@ -131,3 +131,56 @@ form button:hover{
 
     background-color: #2fb86e;
 }
+
+.items-grid { 
+    display: grid ;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    gap: 16px
+    /* displa: grid; serve para fazer coluna assim como o display flex, mas nesse caso eu digo quantas colunas eu quero fazer 1fr é uma forma fracionária para dizer quantas colunas eu quero no gap ele dá margin sem utilizar margin */
+}
+
+
+.items-grid li{
+    background-color: #f0f0f5;
+    list-style: none ;
+
+    border: 2ox solid #f5f5f5;
+    border-radius: 8px;
+    height: 180px;
+
+    padding: 32px 24px 16px; /* medidas da caixa dentro da caixa*/
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    cursor: pointer;
+}
+
+.items-grid li span {
+
+    margin-top: 12px;
+    
+    flex: 1;
+
+    display: flex;
+    align-items: center;
+    
+    text-align: center;
+
+    color: var(--title-color);
+}
+
+.items-grid li.selected{ 
+    background: #e1faec;
+    border: 2px solid #34cb79;
+
+}
+.items-grid li img,
+.items-grid li span {
+    pointer-events: none;
+
+    /*  só vai selecionar o li não a imagem e nem o texto pois ainda continuara tendo o curso point no li*/
+}

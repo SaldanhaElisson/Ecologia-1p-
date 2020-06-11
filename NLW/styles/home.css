@@ -25,7 +25,7 @@
 
     display: flex; /*  Deixar as boxes uma do lado da outra */ 
     align-items: center; /*  alinhar os intens desse elemento */
-    justify-content: space-between; /* justificar os elementos para a direita */
+    justify-content: space-between; /* justificar os elementos para a direita e outro para esquerda */
 }
 
 #page-home header a{
